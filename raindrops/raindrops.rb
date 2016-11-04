@@ -10,7 +10,7 @@ class Raindrops
     divisors.each do |divisor, raindrop|
       raindrop_string << raindrop if number % divisor == 0
     end
-    return number.to_s unless raindrop_string.length > 0
+    return number.to_s unless raindrop_string.empty?
     return raindrop_string
   end
 end
