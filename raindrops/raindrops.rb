@@ -1,15 +1,20 @@
 class Raindrops
-  divisors = {
-    3 => 'Pling',
-    5 => 'Plang',
-    7 => 'Plong'
-  }
-
+  VERSION = 3
   def self.convert(number)
+    divisors = {
+      3 => 'Pling',
+      5 => 'Plang',
+      7 => 'Plong'
+    }
+    raindrop_string = ""
     divisors.each do |divisor, raindrop|
-      return raindrop if number % divisor == 0 
-      return number
+      raindrop_string << raindrop if number % divisor == 0
     end
+    return number.to_s unless raindrop_string.length > 0
+    return raindrop_string
   end
-
 end
+
+module BookKeeping
+  VERSION = 3
+end 
